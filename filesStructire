@@ -1,0 +1,32 @@
+this is the basic structure I would like
+
+- config/
+    - connections.js
+-db/
+    -schema.sql
+-models/
+    -Comment.js
+    -index.js
+    -Post.js
+    -User.js
+-public/
+    -js/
+        -app.js
+-routes/
+    -apiRoutes/
+        -index.js
+    -htmlRoutes/
+        index.js
+    -index.js
+-views/
+    -layouts/
+        -main.handlebars
+    -partials/
+        -navbar.handlebars
+    - createPost.handlebars
+    - dashboard.handlebars
+    - home.handlebars
+    - login.handlebars
+    - post.handlebars
+    - signup.handlebars   
+-server.js
