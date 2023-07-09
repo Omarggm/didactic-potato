@@ -1,4 +1,3 @@
-// Dependencies
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
@@ -7,23 +6,17 @@ class User extends Model {}
 User.init(
   {
     id: {
-      type: DataTypes.UUID,
-      defaultValue: DataTypes.UUIDV4,
+      type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
+      defaultValue: DataTypes.UUIDV4,
     },
     username: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: false,
-    },
-    email: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      unique: true,
     },
     password: {
-      type: DataTypes.STRING(100),
+      type: DataTypes.STRING,
       allowNull: false,
     },
   },
