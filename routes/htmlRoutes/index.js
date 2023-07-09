@@ -23,6 +23,13 @@ router.get("/post", (req, res) => {
   res.render("post");
 });
 
+router.get("/users", (req, res) => {
+  res.render("users", {
+    user: {
+      name: "John Doe",
+    },
+  });
+});
 
 module.exports = router;
 
