@@ -1,9 +1,11 @@
+//Test purpose only
+
 <h1>Users</h1>
 
 <ul>
 {{#each users}}
 <li>
-    <p>{{username}}</p>
+    <a href="/users/{{id}}">{{username}}</a>
     <p>{{password}}</p>
     </li>
 {{/each}}

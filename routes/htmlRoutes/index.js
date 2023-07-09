@@ -14,10 +14,16 @@ router.get("/signup", (req, res) => {
   res.render("signup");
 });
 
-router.get("/dashboard", (req, res) => {
-  const user = req.session.user;
-  const posts = [];
-  res.render("dashboard", { user, posts });
+router.get("/dashboard/:userId", async (req, res) => {
+  try {
+    const { userId } = req.params;
+    const userData = await User.findByPk(userId);
+    const user = userData.get({ plain: true });
+    res.render("dashboard", user);
+  }
+  catch (error) {
+    res.status(500).json(error);
+  }
 });
 
 router.get("/post", (req, res) => {
@@ -27,7 +33,7 @@ router.get("/post", (req, res) => {
 router.get("/users", async (req, res) => {
   try {
     const usersData = await User.findAll();
-    const users = usersData.map(user => user.get({ plain: true }));
+    const users = usersData.map((user) => user.get({ plain: true }));
     console.log(users, "Line 31");
 
     res.render("users", { users });
@@ -35,6 +41,18 @@ router.get("/users", async (req, res) => {
     res.status(500).json(error);
   }
 });
+
+router.get("/users/:userId", async (req, res) => {
+  try {
+    const { userId } = req.params;
+    const userData = await User.findByPk(userId);
+    const user = userData.get({ plain: true });
+    res.render("userProfile", user);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
+
 module.exports = router;
 
 // Path: routes\htmlRoutes\index.js
