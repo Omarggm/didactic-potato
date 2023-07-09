@@ -29,4 +29,4 @@ User.init(
 
 module.exports = User;
 
-// Path: models\post.js
+// Path: models\user.js

@@ -9,5 +9,4 @@ router.use("/users", userRoutes);
 
 module.exports = router;
 
-// Path: routes\postRoutes.js
-
+// Path: routes\api\index.js
