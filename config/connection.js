@@ -1,14 +1,17 @@
 const { Sequelize } = require('sequelize');
+require('dotenv').config();
 
-const sequelize = new Sequelize(
-    'TECH_BLOG_DB',
-    'root',
-    'password',
+const sequelize = new Sequelize
+(
+    process.env.DB_NAME,
+    process.env.DB_USER,
+    process.env.DB_PASSWORD,
     {
         host: 'localhost',
         dialect: 'mysql',
-        
     }
 );
 
 module.exports = sequelize;
+
+// Path: config\index.js
