@@ -1,12 +1,10 @@
 const bcrypt = require("bcrypt");
-const express = require("express");
-const router = express.Router();
 const { User } = require("../models");
 
 //Controller function for user signup
 async function signup(req, res) {
   try {
-    //Extract username and email request body
+    //Extract username and email from request body
     const { username, email } = req.body;
 
     //Extract password from request body and hash it
@@ -22,7 +20,7 @@ async function signup(req, res) {
     res.redirect("/dashboard");
   } catch (error) {
     console.log(error);
-    return res.status(500).json({ message: "Something went wrong".error });
+    return res.status(500).json({ message: "Something went wrong", error });
   }
 }
 
@@ -78,7 +76,8 @@ async function logout(req, res) {
   }
 }
 
-module.exports = { signup, login, logout,};
+module.exports = { signup, login, logout };
+
 
 
 // Path: controllers\authController.js

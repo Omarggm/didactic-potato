@@ -36,6 +36,6 @@ Post.init(
 
 module.exports = Post;
 
-// Path: models\comment.js
+// Path: models\post.js
 
 
