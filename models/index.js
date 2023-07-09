@@ -12,3 +12,5 @@ Post.belongsTo(User, {
 
 module.exports = { Post, User };
 
+
+// Path: models\comment.js

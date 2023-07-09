@@ -12,3 +12,5 @@ const sequelize = new Sequelize
 );
 
 module.exports = sequelize;
+
+// Path: config\index.js
