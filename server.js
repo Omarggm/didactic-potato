@@ -4,6 +4,7 @@ const exphbs = require("express-handlebars");
 const routes = require("./controllers");
 const dotenv = require("dotenv");
 const sequelize = require("./config/connection");
+const hbs = exphbs.create({});
 
 //Load the environment variables from the .env file
 dotenv.config();
@@ -26,7 +27,7 @@ app.use(
 );
 
 //Set up handlebars as the template engine
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 
 //Set up routes
