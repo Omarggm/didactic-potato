@@ -14,7 +14,9 @@ router.get("/signup", (req, res) => {
 });
 
 router.get("/dashboard", (req, res) => {
-  res.render("dashboard");
+  const user = req.session.user;
+  const posts = [];
+  res.render("dashboard", { user, posts });
 });
 
 router.get("/post", (req, res) => {
