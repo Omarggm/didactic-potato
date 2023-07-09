@@ -26,4 +26,4 @@ router.get("/post", (req, res) => {
 
 module.exports = router;
 
-// Path: routes\htmlRoutes.js
+// Path: routes\htmlRoutes\index.js
