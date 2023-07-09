@@ -7,7 +7,7 @@ const { signup, login, logout } = require("./authController")
 router.use("/api", apiRoutes);
 router.post("/auth/signup", signup);
 router.post("/auth/login", login);
-router.get("/auth/logout", logout);
+router.post("/auth/logout", logout);
 
 module.exports = router;
 
