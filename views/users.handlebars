@@ -1,5 +1,10 @@
 <h1>Users</h1>
 
 <ul>
-<li>{{user.name}}</li>
+{{#each users}}
+<li>
+    <p>{{username}}</p>
+    <p>{{password}}</p>
+    </li>
+{{/each}}
 </ul>
