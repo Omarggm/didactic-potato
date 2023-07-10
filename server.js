@@ -33,6 +33,7 @@ app.set("view engine", "handlebars");
 
 //Set up routes
 app.use(routes);
+app.use(controllers);
 
 //Sync sequelize models to the database, then turn on the server
 sequelize.sync({ force: false }).then(() => {
