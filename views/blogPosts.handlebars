@@ -1,0 +1,10 @@
+<h1>Blog Posts</h1>
+
+<ul class="blogPostList">
+ {{#each blogPosts}}
+  <li>
+   <a href="/blogPosts/{{id}}">{{title}}</a>
+   <p>{{content}}</p>
+  </li>
+ {{/each}}
+</ul>
