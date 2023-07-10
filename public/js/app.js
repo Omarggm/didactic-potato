@@ -1,4 +1,3 @@
-console.log("Hello World from app.js");
 const $username = document.getElementById("username");
 const $email = document.getElementById("email");
 const $password = document.getElementById("password");
@@ -26,6 +25,9 @@ $submitBtn.addEventListener("click", async (event) => {
     });
     const data = await response.json();
     console.log(data);
+    $username.value = "";
+    $email.value = "";
+    $password.value = "";
   } catch (error) {
     console.error(error);
   }
