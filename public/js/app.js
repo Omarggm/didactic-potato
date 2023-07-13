@@ -59,6 +59,6 @@ $blogPostSubmitBtn.addEventListener("click", async (event) => {
     $title.value = "";
     $blogContent.value = "";
   } catch (error) {
-    console.error(error);
+    alert(error);
   }
 });
