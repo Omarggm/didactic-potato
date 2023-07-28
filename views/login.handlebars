@@ -1,8 +1,23 @@
-<h1>Login</h1>
-<form>
-  <input type="text" name="username" placeholder="Username" required />
-  <input type="password" name="password" placeholder="Password" required />
-  <button type="submit">Login</button>
-</form>
+<link rel="stylesheet" href="../public/css/style.css" />
 
-{{! Path: views\login.handlebars }}
+<div>
+  <h2 class="panel">Login</h2>
+
+  <form class="form login-form">
+    <div class="form-group">
+      <label for="email-login" class="panel">email:</label>
+      <input class="form-input panel" type="text" id="email-login" />
+    </div>
+    <div class="form-group">
+      <label for="password-login" class="panel">password:</label>
+      <input class="form-input panel" type="password" id="password-login" />
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary panel" type="submit">login</button>
+    </div>
+  </form>
+  <a href="/signup" class="panel">Want to be an author? Sign up now!</a>
+
+</div>
+
+<script src="./js/login.js"></script>

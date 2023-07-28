@@ -1,43 +1,41 @@
-const express = require("express");
-const exphs = require("express-handlebars");
-const session = require("express-session");
-const controllers = require("./controllers");
-const routes = require("./routes");
-const path = require("path");
+const path = require('path');
+const express = require('express');
+const session = require('express-session');
+const exphbs = require('express-handlebars');
+const routes = require('./controllers');
+const helpers = require('./utils/helpers');
 
-const hbs = exphs.create({});
-
-const sequelize = require("./config/connection");
-const SequelizeStore = require("connect-session-sequelize")(session.Store);
+const sequelize = require('./config/connection');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-app.engine("handlebars", hbs.engine);
-app.set("view engine", "handlebars");
+// Set up Handlebars.js engine with custom helpers
+const hbs = exphbs.create({ helpers });
 
 const sess = {
-  secret: "Super secret secret",
+  secret: 'Super secret secret',
+  cookie: {},
   resave: false,
-  saveUninitialized: false,
-  cookie: {
-    maxAge: 1000 * 60 * 60 * 2,
-  },
+  saveUninitialized: true,
   store: new SequelizeStore({
-    db: sequelize,
-  }),
+    db: sequelize
+  })
 };
 
-app.use(express.static(__dirname + `/public`));
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 app.use(session(sess));
 
-app.use(routes);
-app.use(controllers);
+// Inform Express.js on which template engine to use
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 
-// Synchronize the Sequelize models with the database
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(routes);
+
 sequelize.sync({ force: false }).then(() => {
-  // Start the Express server and listen for incoming requests on the specified port
   app.listen(PORT, () => console.log(`Now live on http://localhost:${PORT}`));
 });
