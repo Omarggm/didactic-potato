@@ -1,38 +1,42 @@
+<!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The 8 Bit Blog</title>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The 8 Bit Blog</title>
+  <link rel="stylesheet" href="/css/jass.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
 
-  <body>
-
+<!-- Our STATIC HTML displayed on every page -->
+<body class="site">
+    
     <header>
-      <h1 class="container">The 8 Bit Blog</h1>
-      <nav class="container">
+      <h1>The 8 Bit Blog</h1>
+      <nav>
         <a href="/">Home</a>
         {{#if logged_in}}
-          <a href="/dashboard">Dashboard</a>
-          <a id="logout" href="#">Logout</a>
+        <a href="/dashboard">Dashboard</a> |
+        <a id="logout" href="#">Logout</a>
         {{else}}
-          <a href="/login">Login</a>
+        <a href="/login">Login</a>
         {{/if}}
       </nav>
     </header>
 
-    <main class="container">
-      {{{body}}}
+    <main>
+      {{{ body }}}
     </main>
 
-    <footer class="container">
+    <footer>
       {{> footer}}
     </footer>
 
-    {{#if logged_in}}
-      <script src="/js/logout.js"></script>
-    {{/if}}
-  </body>
+  <!-- Render logout script for logged in users only -->
+  {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+  {{/if}}
+</body>
 
 </html>

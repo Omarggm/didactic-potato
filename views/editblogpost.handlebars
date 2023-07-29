@@ -1,61 +1,41 @@
-{{! Link the CSS file with the correct relative path }}
-<link rel="stylesheet" href="../public/css/style.css" />
+<div class="edit-blogpost-container">
+  <div class="edit-blogpost-wrapper">
+    <h3 class="edit-blogpost-heading">Edit Blog Post:</h3>
 
-<!-- Rest of the code remains the same -->
-<div class="container container-fluid mt-5">
-
-  <div class="row mt-4">
-    <div class="col-md-6">
-      <div class="panel">
-        <!-- Wrap the h3 heading within a div with the .panel class -->
-        <h3>Edit Blog Post:</h3>
+    <form class="edit-blogpost-form">
+      <div class="form-group">
+        <input
+          type="hidden"
+          id="blogpost-id"
+          name="blogpost-id"
+          value="{{id}}"
+        />
+        <label for="blogpost-title">Title:</label>
+        <input
+          class="form-input"
+          type="text"
+          id="blogpost-title"
+          name="blogpost-title"
+          value="{{blog_title}}"
+        />
       </div>
 
-      <form class="form edit-blogpost-form">
-        <div class="form-group">
-          <input
-            type="hidden"
-            id="blogpost-id"
-            name="blogpost-id"
-            value="{{id}}"
-          />
-          <label for="blogpost-title" class="panel">Title:</label>
-          <input
-            class="form-input panel"
-            type="text"
-            id="blogpost-title"
-            name="blogpost-title"
-            value="{{blog_title}}"
-          />
-        </div>
+      <div class="form-group">
+        <label for="blogpost-content">Content:</label>
+        <textarea
+          class="form-input"
+          type="text"
+          id="blogpost-content"
+          name="blogpost-content"
+        >{{blog_content}}</textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="update-post-button">Update Blog Post</button>
 
-        <div class="form-group">
-          <label for="blogpost-content" class="panel">Content:</label>
-          <textarea
-            class="form-input panel"
-            type="text"
-            id="blogpost-content"
-            name="blogpost-content"
-          >{{blog_content}}</textarea>
-        </div>
-        <div class="form-group">
-          <button
-            type="submit"
-            id="update-post"
-            class="btn btn-primary panel"
-          >Update Blog Post</button>
-
-          {{! <button type="submit" id="update-post" class="btn btn-primary panel">Update</button> }}
-          <button
-            type="submit"
-            id="delete-post"
-            class="btn btn-primary panel"
-          >Delete Blog Post</button>
-        </div>
-      </form>
-    </div>
+        <button type="submit" class="delete-post-button">Delete Blog Post</button>
+      </div>
+    </form>
   </div>
-
 </div>
 
 <script src="/js/editblogpost.js"></script>
