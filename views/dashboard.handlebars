@@ -1,11 +1,26 @@
-<h1>Dashboard</h1>
-<h3>Welcome, {{username}}!</h3>
-<a href="/post">Create a New Post</a>
-<ul>
-  {{#each posts}}
-    <li>
-      <h4>{{this.title}}</h4>
-      <p>{{this.content}}</p>
-    </li>
+<h2 class="welcome-heading">Welcome, {{name}}!</h2>
+<h2 class="latest-posts-heading">Latest Blog Posts:</h2>
+<div class="blog-posts-container">
+
+  {{#each blogposts as |blog|}}
+    <div class="blog-post blog-post-border">
+      <div class="blog-title">
+        <h2>
+          <a href="/api/blog/edit/{{blog.id}}">{{blog.blog_title}}</a>
+        </h2>
+        <p>Created by
+          {{blog.author.name}}
+          on
+          {{format_date blog.date_created}}</p>
+      </div>
+      <div class="blog-content">
+        <p>
+          {{blog.blog_content}}
+        </p>
+      </div>
+    </div>
   {{/each}}
-</ul>
+
+  <a href="/api/blog"><button class="create-blog-button">Create New Blog Post</button></a>
+
+</div>

@@ -1,37 +1,31 @@
-{{!-- Link the CSS file --}}
-<link rel="stylesheet" href="../public/css/style.css" />
+<div class="create-blogpost-container">
+  <div class="create-blogpost-wrapper">
+    <h3 class="create-blogpost-heading">Create a New Blog Post:</h3>
 
-<div class="container container-fluid mt-5">
+    <form class="new-blogpost-form">
+      <div class="form-group">
+        <label for="blogpost-title">Title:</label>
+        <input
+          class="form-input"
+          type="text"
+          id="blogpost-title"
+          name="blogpost-title"
+        />
+      </div>
 
-  <div class="row mt-4">
-    <div class="col-md-6">
-      <h3 class="panel">Create a New Blog Post:</h3>
-
-      <form class="form new-blogpost-form">
-        <div class="form-group">
-          <label for="blogpost-title" class="panel">Title:</label>
-          <input
-            class="form-input panel"
-            type="text"
-            id="blogpost-title"
-            name="blogpost-title"
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="blogpost-content" class="panel">Content:</label>
-          <textarea
-            class="form-input panel"
-            id="blogpost-content"
-            name="blogpost-content"
-          ></textarea>
-        </div>
-        <div class="form-group">
-          <button type="submit" class="btn btn-primary panel">Create</button>
-        </div>
-      </form>
-    </div>
+      <div class="form-group">
+        <label for="blogpost-content">Content:</label>
+        <textarea
+          class="form-input"
+          id="blogpost-content"
+          name="blogpost-content"
+        ></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="create-blogpost-button">Create</button>
+      </div>
+    </form>
   </div>
 </div>
 
-<script src="../public/js/createblogpost.js"></script>
+<script src="/js/createblogpost.js"></script>

@@ -1,24 +1,20 @@
-{{!-- Link the CSS file --}}
-<link rel="stylesheet" href="../public/css/style.css" />
+<h2 class="latest-posts-heading">Latest Blog Posts:</h2>
+<div class="blog-posts-container container-fluid mt-5">
 
-<!-- Loop over each object in the blogposts array -->
-<h2 class="panel">Latest Blog Posts:</h2>
-<div class="container">
-
-{{#each blogposts as |blog|}}
-  <div class="panel">
-    <div>
-      <h2>
-        <a href="/blog/{{blog.id}}" class="panel">{{blog.blog_title}}</a>
-      </h2>
-      <p class="panel">Created by {{blog.author.name}} on {{format_date blog.date_created}}</p>
+  {{#each blogposts as |blog|}}
+    <div class="blog-post blog-post-border">
+      <div class="blog-title">
+        <h2>
+          <a href="/blog/{{blog.id}}">{{blog.blog_title}}</a>
+        </h2>
+        <p>Created by {{blog.author.name}} on {{format_date blog.date_created}}</p>
+      </div>
+      <div class="blog-content">
+        <p>
+          {{blog.blog_content}}
+        </p>
+      </div>
     </div>
-    <div>
-      <p class="panel">
-        {{blog.blog_content}}
-      </p>
-    </div>
-  </div>
-{{/each}}
+  {{/each}}
 
 </div>

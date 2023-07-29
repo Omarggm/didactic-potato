@@ -1,56 +1,149 @@
-/* Reset some default styles to ensure consistency */
-body, h1, h2, p {
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    font-family: 'Press Start 2P', sans-serif; /* Use an 8-bit style font (you can find them on Google Fonts) */
-    background-color: #000000; /* Black background */
-    color: #FFFFFF; /* White text color */
-  }
-  
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  /* Retro Navigation Icons */
-  nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #1E90FF; /* Dodger Blue background for navigation bar */
-    padding: 10px;
-  }
-  
-  nav a {
-    color: #FFFFFF; /* White text color for navigation links */
-    text-decoration: none;
-    margin: 0 10px;
-  }
-  
-  nav a:hover {
-    text-decoration: underline; /* Underline navigation links on hover */
-  }
-  
-  /* Retro Comic Panels */
-  .panel {
-    border: 2px solid #FFD700; /* Gold border for panels (adjust as needed) */
-    padding: 10px;
-    background-color: #1E90FF; /* Dodger Blue background for panels (adjust as needed) */
-    margin-bottom: 20px; /* Add some spacing between panels */
-  }
-  
-  /* Animated GIFs */
-  .gif-animation {
-    animation: bounce 2s infinite; /* Replace 'bounce' with your animation keyframes */
-  }
-  
-  /* Define your custom keyframes for animations */
-  @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-  }
-  
+/* Basic 8-bit pixel art color palette */
+:root {
+  --color-bg: #000000;
+  /* Black */
+  --color-fg: #ffffff;
+  /* White */
+  --color-link: #55aaff;
+  /* Cyan */
+  --color-button: #ff5500;
+  /* Orange */
+}
+
+/* Reset some styles for pixel art consistency */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+button,
+input,
+textarea {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-family: "Courier New", monospace;
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* Apply pixel art styles to specific elements */
+body {
+  background-color: var(--color-bg);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: var(--color-fg);
+}
+
+a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  background-color: var(--color-button);
+  color: var(--color-fg);
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--color-bg);
+  color: var(--color-button);
+}
+
+/* Add pixel art styles for specific elements below */
+/* For example: */
+
+.site-header {
+  padding: 10px;
+  background-color: var(--color-bg);
+}
+
+.nav-link {
+  padding: 5px 10px;
+}
+
+.latest-posts-heading {
+  margin-bottom: 20px;
+  /* Increase the spacing below the heading */
+}
+
+.blog-post {
+  margin-bottom: 30px;
+  /* Add spacing between individual blog posts */
+}
+
+.blog-content {
+  padding: 10px;
+  /* Add padding to create space between content and container edge */
+}
+
+.blog-post-border {
+  border: 1px solid var(--color-fg); /* Set the border to 1 pixel solid using the foreground color */
+  padding: 10px; /* Add some padding to create space between content and border */
+}
+
+/* Add pixel art styles for specific elements below */
+
+.create-blogpost-container {
+  margin-top: 20px; /* Add some space between the blog posts and the create blog post section */
+}
+
+.create-blogpost-wrapper {
+  border: 1px solid var(--color-fg); /* Add a pixel border to the wrapper */
+  padding: 10px; /* Add padding to create space between content and border */
+}
+
+.create-blogpost-heading {
+  color: var(--color-fg); /* Set the heading color to the foreground color */
+  margin-bottom: 10px; /* Add spacing below the heading */
+}
+
+.new-blogpost-form {
+  margin-top: 15px; /* Add some space between the heading and the form */
+}
+
+.form-group {
+  margin-bottom: 10px; /* Add spacing between form groups */
+}
+
+.form-group label {
+  color: var(--color-fg); /* Set the label color to the foreground color */
+  display: block; /* Ensure the labels are on separate lines */
+}
+
+.form-input {
+  padding: 5px; /* Add padding to the input and textarea fields */
+  border: 1px solid var(--color-fg); /* Add a pixel border to the input and textarea fields */
+  background-color: var(--color-bg); /* Set the background color of the input and textarea fields */
+  color: var(--color-fg); /* Set the text color of the input and textarea fields */
+  width: 100%; /* Make the input and textarea fields full width */
+}
+
+.create-blogpost-button {
+  background-color: var(--color-button); /* Set the button background color */
+  color: var(--color-fg); /* Set the button text color */
+  border: none; /* Remove the default button border */
+  padding: 8px 15px; /* Add padding to the button */
+  cursor: pointer;
+}
+
+.create-blogpost-button:hover {
+  background-color: var(--color-bg); /* Change the button background color on hover */
+  color: var(--color-button); /* Change the button text color on hover */
+}
