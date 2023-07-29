@@ -1,9 +1,26 @@
-   <h1>Sign Up</h1>
-    <form>
-      <input id="username" type="text" name="username" placeholder="Username" required>
-      <input id="email" type="email" name="email" placeholder="Email" required>
-      <input id="password" type="password" name="password" placeholder="Password" required>
-      <button id="submitBtn" type="submit">Sign Up</button>
-    </form>
+<link rel="stylesheet" href="../public/css/style.css" />
 
-    {{! Path: views\signup.handlebars }}
+<div class="container mt-5">
+  <h2 class="panel">Signup</h2>
+
+  <form class="form signup-form">
+    <div class="form-group">
+      <label for="name-signup" class="panel">name:</label>
+      <input class="form-input panel" type="text" id="name-signup" />
+    </div>
+    <div class="form-group">
+      <label for="email-signup" class="panel">email:</label>
+      <input class="form-input panel" type="text" id="email-signup" />
+    </div>
+    <div class="form-group">
+      <label for="password-signup" class="panel">password:</label>
+      <input class="form-input panel" type="password" id="password-signup" />
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary panel" type="submit">signup</button>
+    </div>
+  </form>
+  <a href="/login" class="panel">Already an author? Click here to log back in!</a>
+</div>
+
+<script src="./js/signup.js"></script>

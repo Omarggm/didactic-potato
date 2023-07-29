@@ -1,0 +1,56 @@
+/* Reset some default styles to ensure consistency */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Press Start 2P', sans-serif; /* Use an 8-bit style font (you can find them on Google Fonts) */
+    background-color: #000000; /* Black background */
+    color: #FFFFFF; /* White text color */
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Retro Navigation Icons */
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1E90FF; /* Dodger Blue background for navigation bar */
+    padding: 10px;
+  }
+  
+  nav a {
+    color: #FFFFFF; /* White text color for navigation links */
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  nav a:hover {
+    text-decoration: underline; /* Underline navigation links on hover */
+  }
+  
+  /* Retro Comic Panels */
+  .panel {
+    border: 2px solid #FFD700; /* Gold border for panels (adjust as needed) */
+    padding: 10px;
+    background-color: #1E90FF; /* Dodger Blue background for panels (adjust as needed) */
+    margin-bottom: 20px; /* Add some spacing between panels */
+  }
+  
+  /* Animated GIFs */
+  .gif-animation {
+    animation: bounce 2s infinite; /* Replace 'bounce' with your animation keyframes */
+  }
+  
+  /* Define your custom keyframes for animations */
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
